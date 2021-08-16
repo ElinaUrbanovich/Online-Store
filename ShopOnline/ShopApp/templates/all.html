@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for category in categories %}
+        <h3>{{ category.name }}</h3>
+
+        <div class="patterns">
+            {% for item in category.item_set.all %}
+                <div>
+                    <a href="{% url 'item' item.id %}">
+                        <h4>{{ item.name }}</h4>
+                    </a>
+                    <p>{{ item.price }}$<p>
+                    <img width=100% src={{ item.image.url }}>
+                </div>
+            {% endfor %}
+        </div> 
+
+    {% endfor %}
+
+{% endblock content %}

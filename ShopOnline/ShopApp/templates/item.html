@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="item">
+        <div class="image">
+            <img width=100% src="{{ item.image.url }}">
+        </div>
+        <div class="text">
+            <h2 id="name{{ item.id }}">{{ item.name }}</h2>
+            <h5>{{ item.category }}<h5>
+            <p id="price{{ item.id }}">{{ item.price }}<p>
+            <p>{{ item.description }}</p>
+            <button class="atc" id="{{item.id}}">Add to cart</button>
+        </div> 
+    </div>
+
+{% endblock content %}

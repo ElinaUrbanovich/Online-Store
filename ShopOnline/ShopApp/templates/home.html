@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <img width=100% src="{% static "ShopApp/images/banner1.jpg" %}">
+
+    <div class="new_patterns">
+                
+        <h2>Newest patterns</h2>
+        <a href="{% url 'all' %}">View all patterns</a>          
+
+    </div>
+
+    <div class="patterns">
+    {% for item in items %}
+        <div>
+            <a href="{% url 'item' item.id %}">
+                <h4>{{ item.name }}</h4>
+            </a>
+            <p>{{ item.price }}$<p>
+            <img width=100% src={{ item.image.url }}>
+        </div> 
+    {% endfor %}
+    </div>
+
+{% endblock content %}

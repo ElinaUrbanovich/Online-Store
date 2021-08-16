@@ -1,0 +1,111 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-image: url("/static/ShopApp/images/background34.png");
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: burlywood;
+    /* position: fixed;
+    top: 0;
+    width: 100%; */
+}
+
+li {
+    float: left;
+}
+
+li a,
+.dropbtn {
+    display: block;
+    color: #414246;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    min-width: 60px;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+    background-color: cadetblue;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #414246;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.content {
+    margin-top: 40px;
+}
+
+div#content a:link {
+    color: #414246;
+    text-decoration: none;
+}
+
+div#content a:visited {
+    color: #414246;
+    text-decoration: none;
+}
+
+.new_patterns {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new_patterns h2 {
+    float: left;
+    width: 70%;
+    text-align: left;
+}
+
+.new_patterns a {
+    background-color: wheat;
+    text-align: right;
+}
+
+.patterns {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: blue;
+}
+
+.patterns div {
+    width: 30%;
+}
