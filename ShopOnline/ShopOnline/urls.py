@@ -30,6 +30,7 @@ urlpatterns = [
     path('item/<int:item_id>/', ShopAppViews.item, name='item'),
     path('cart/', ShopAppViews.cart, name='cart'),
     path('order_done', ShopAppViews.order_done, name="order_done"),
+    path('profile/', ShopAppViews.profile, name="profile"),
 
 ]
 

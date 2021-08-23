@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>My orders:</h3>
+
+    {% if orders %}
+        
+    <ul class="profile">
+        {% for order in orders %}
+        <hr>
+        <li>{{order.0}}</li>
+        <hr>
+            <table id="profiletable">
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price for 1 piece</th>
+            </tr>
+            {% for items in order.1 %}
+            <tr>
+                <td id='col1'>{{items.1}}</td>
+                <td id='col2'>{{items.0}}</td>
+                <td id='col3'>{{items.2}}</td>
+            <tr>
+            {% endfor %}
+            </table>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+
+    <p>You haven't made any orders yet.</p>
+
+    {%endif%}
+        
+
+
+    </div>
+
+{% endblock content %}

@@ -1,9 +1,30 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    flex: 0 0 auto;
+}
+
+#content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
 body {
     font-family: 'Josefin Sans', sans-serif;
     color: #414246;
     margin-left: 15%;
     margin-right: 15%;
-    position: relative;
     background-image: url("/static/ShopApp/images/background34.png");
 }
 
@@ -183,13 +204,16 @@ li.dropdown {
     color: #e89800;
 }
 
-#cart_table {
+#cart_table,
+#profiletable {
     border-collapse: collapse;
     width: 100%;
 }
 
 #cart_table td,
-#cart_table th {
+#cart_table th,
+#profiletable td,
+#profiletable th {
     border: 2px solid #ddd;
     padding: 8px;
     text-align: center;
@@ -198,5 +222,62 @@ li.dropdown {
 #cart_table th {
     padding-top: 12px;
     padding-bottom: 12px;
+    color: #e89800;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #e89800;
+}
+
+#left {
+    width: 70%;
+    display: inline-block;
+    text-align: center;
+}
+
+#right {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+}
+
+.profile {
+    background-color: rgba(255, 255, 255, 0.5);
+    float: none;
+}
+
+.profile li {
+    float: none
+}
+
+#col1 {
+    width: 60%;
+}
+
+#col2,
+#col3 {
+    width: 20%;
+}
+
+button,
+input {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: white;
+    font-size: 14px;
+    color: #414246;
+    border: 2px solid #e89700;
+    padding: 3px 5px;
+    padding-top: 4px;
+    margin: 2px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+button:hover,
+input:hover {
     color: #e89800;
 }

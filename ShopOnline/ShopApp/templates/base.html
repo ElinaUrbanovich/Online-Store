@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Amigirumi patterns{% endblock %}</title>
+        <title>{% block title %}Amigirumi toys{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'ShopApp/styles/styles.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
         <header>
 
             <div id="navigation_bar">
-                <ul>
+                <ul class="navbar">
                     <li>
                         <a href="{% url 'home' %}">Home</a>
                     </li>
@@ -43,18 +43,18 @@
                     <li class="navbar_login" style="float:right">
                         <div class="login">
                             {% if user.is_authenticated %}
-                                <div class="logelem">
-                                    <p>Hello, {{ user.get_username }}!</p>
+                                <div>
+                                    <a href="/profile">Hello, {{ user.get_username }}!</a>
                                 </div>
                                 <div class="logelem">
-                                    <a href="{% url 'logout' %}?next={{ request.path }}">Log out</a>
+                                    <a href="{% url 'logout' %}?next=/home/">Log out</a>
                                 </div>
                             {% else %}
                                 <div class="logelem">
                                     <a href="{% url 'login' %}?next=/home/">Log in</a>
                                 </div>
                                 <div class="logelem">
-                                    <a href="{% url 'register' %}?next={{ request.path }}">Register</a>
+                                    <a href="{% url 'register' %}">Register</a>
                                 </div>
                             {% endif %}
                         </div>
@@ -73,9 +73,23 @@
         
         </div>
 
+        <br>
+
         <div class="footer">
 
-            <p>Made by Elina Urbanovich</p>
+            <div id="left">
+                <p>
+                    <b>Address:</b> Pushkin av., 75, Minsk, Belarus, 220020 
+                    <br>
+                    <b>Tel.:</b> +375 29 123 45 67
+                    <br>
+                    <b>e-mail:</b> amigurumi@gmail.com
+                </p>
+            </div>
+
+            <div id="right">
+                <p>Made by Elina Urbanovich</p>
+            </div>
 
         </div>
 

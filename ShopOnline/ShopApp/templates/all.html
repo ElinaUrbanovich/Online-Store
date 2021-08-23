@@ -10,9 +10,9 @@
                 <div>
                     <a href="{% url 'item' item.id %}">
                         <h4>{{ item.name }}</h4>
-                    </a>
                     <p>{{ item.price }}$<p>
                     <img width=100% src={{ item.image.url }}>
+                    </a>
                 </div>
             {% endfor %}
         </div> 

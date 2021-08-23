@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}Cart{% endblock title %}
+
 {% block content %}
 
     <h3>Cart:</h3>
@@ -55,7 +57,7 @@
         
         $('#cart_table').append(itemString);
     }
-    totalPrice = `<tr><td><button class="clear_cart">Clear cart</button></td> <td><b>Your total:</b></td> <td>${total} $<td> </tr>`;
+    totalPrice = `<tr><td><button class="clear_cart">Clear cart</button></td> <td><b>Your total:</b></td> <td>${total} $</td> </tr>`;
     $('#cart_table').append(totalPrice);
 
     $('#items').val(JSON.stringify(cart));

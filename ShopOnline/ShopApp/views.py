@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Category, Item, Order
 from .forms import OrderForm, UserRegistrationForm
-
+from django.contrib.auth.models import User
+import json, datetime
 
 def home(request):
 
@@ -41,7 +42,9 @@ def cart(request):
         if form.is_valid():
 
             order = Order()
-
+            
+            order.user = request.user.get_username()
+            order.date = datetime.datetime.now()
             order.items = request.POST.get('items', '')            
             order.name = form.cleaned_data['name']
             order.surname = form.cleaned_data['surname']
@@ -74,3 +77,29 @@ def register(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, 'registration/register.html', {'user_form': user_form})
+
+def profile(request):
+
+    user = request.user.get_username()
+    all_orders = Order.objects.all().order_by('-date').filter(user = user)
+    orders = all_orders.values('date', 'items')
+
+    order_list = []
+    for order in orders:
+        date = order['date'].strftime("%m/%d/%Y")
+        items = order['items'].split("[")
+        item_list = []
+        for item in items:
+            if "]" in item:
+                item = item.replace(']','').replace('}','').replace('"','')
+                if ":" in item:
+                    item = item[:-3]
+                item = item.split(',')
+                item_list.append(item)
+            
+
+        print(item_list)
+
+        order_list.append([date, item_list])
+    
+    return render(request, 'profile.html', {'orders':order_list})
